@@ -229,6 +229,7 @@ export class ${className} {
      */
     valueOf () {
         return {
+            type: this.nrName,
             ${classValueOf}
         };
     }
