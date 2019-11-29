@@ -1,0 +1,32 @@
+{
+  "name": "@norjs/tools",
+  "version": "1.0.0",
+  "description": "NorJS Development Tools",
+  "main": "index.js",
+  "bin": {
+    "norjs-db-model-generator": "./src/bin/database-model-generator-command.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/norjs/tools.git"
+  },
+  "keywords": [
+    "database",
+    "postgresql"
+  ],
+  "author": "Jaakko Heusala <jheusala@iki.fi>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/norjs/tools/issues"
+  },
+  "homepage": "https://github.com/norjs/tools#readme",
+  "dependencies": {
+    "@norjs/ui": "^1.0.18",
+    "@norjs/utils": "^1.0.18",
+    "esm": "^3.2.25",
+    "lodash": "^4.17.15"
+  }
+}

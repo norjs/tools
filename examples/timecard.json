@@ -1,0 +1,70 @@
+{
+  "nrName": "NrDatabaseTable",
+  "name": "records",
+  "columns": [
+    {
+      "nrName": "NrDatabaseColumn",
+      "name": "id",
+      "type": "UUID",
+      "primaryKey": true
+    },
+    {
+      "nrName": "NrDatabaseColumn",
+      "name": "version",
+      "type": "INT",
+      "default": 0
+    },
+    {
+      "nrName": "NrDatabaseColumn",
+      "name": "created",
+      "type": "TIMESTAMPTZ",
+      "default": "NOW"
+    },
+    {
+      "nrName": "NrDatabaseColumn",
+      "name": "modified",
+      "type": "TIMESTAMPTZ",
+      "default": "NOW"
+    },
+    {
+      "nrName": "NrDatabaseColumn",
+      "name": "user_id",
+      "type": "UUID"
+    },
+    {
+      "nrName": "NrDatabaseColumn",
+      "name": "project_id",
+      "type": "UUID"
+    },
+    {
+      "nrName": "NrDatabaseColumn",
+      "name": "start_time",
+      "type": "TIMESTAMPTZ",
+      "default": "NOW"
+    },
+    {
+      "nrName": "NrDatabaseColumn",
+      "name": "end_time",
+      "type": "TIMESTAMPTZ",
+      "nullable": true
+    },
+    {
+      "nrName": "NrDatabaseColumn",
+      "name": "lunch_minutes",
+      "type": "INT",
+      "default": 30
+    },
+    {
+      "nrName": "NrDatabaseColumn",
+      "name": "description",
+      "type": "TEXT",
+      "default": ""
+    },
+    {
+      "nrName": "NrDatabaseColumn",
+      "name": "deleted",
+      "type": "BOOLEAN",
+      "default": false
+    }
+  ]
+}
