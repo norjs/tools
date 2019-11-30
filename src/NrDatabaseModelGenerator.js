@@ -244,17 +244,14 @@ export class ${className} {
 
     /**
      *
-     * @param value {*}
-     * @returns {${className}}
+     * @param value {Object}
+     * @returns {Object}
+     * @protected
      */
-    static parseValue (value) {
+    static _parseValue (value) {
 
-        if ( !value ) {
-            throw new TypeError(\`\${ this.nrName }.parseValue(): value was not defined\`);
-        }
-
-        if ( value instanceof ${className} ) {
-            return value;
+        if ( !_.isObject(value) ) {
+            throw new TypeError(\`\${ this.nrName }.parseValue(): value was not object: "\${ value.type }"\`);
         }
 
         if ( value.type !== this.nrName ) {
@@ -265,12 +262,31 @@ export class ${className} {
             ${classParseValueVariables}
         } = value;
 
-        return new ${className}({
+        return {
             ${classParseValueConstructorArgs}
-        });
+        };
 
     }
 
+    /**
+     *
+     * @param value {Object}
+     * @returns {${className}}
+     */
+    static parseValue (value) {
+
+        if ( !value ) {
+            throw new TypeError(\`\${ this.nrName }.parseValue(): value was not defined: "\${ value }"\`);
+        }
+
+        if ( value instanceof ${className} ) {
+            return value;
+        }
+
+        return new ${className}(this._parseValue(value));
+
+    }
+    
 }
 
 // noinspection JSUnusedGlobalSymbols
